@@ -68,7 +68,7 @@ array automatically on restart.
 ```jsonc
 {
   "plugin": [
-    "@keeveeg/opencode-wireguard-proxy"
+    "@keeveeg/opencode-wireguard-proxy@latest"
   ]
 }
 ```
@@ -78,7 +78,7 @@ Or with a custom config path:
 ```jsonc
 {
   "plugin": [
-    ["@keeveeg/opencode-wireguard-proxy", {
+    ["@keeveeg/opencode-wireguard-proxy@latest", {
       "configPath": "/path/to/wireguard-proxy.jsonc"
     }]
   ]
