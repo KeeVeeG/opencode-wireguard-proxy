@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/KeeVeeG/opencode-wireguard-proxy/master/schema.json",
+  "title": "opencode-wireguard-proxy config",
+  "description": "Configuration for the opencode-wireguard-proxy plugin. Place this file as wireguard-proxy.jsonc in ~/.config/opencode/ (global) or .opencode/ (per-project).",
+  "type": "object",
+  "required": ["binary", "config", "hosts"],
+  "properties": {
+    "binary": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Path to wireproxy binary. Relative paths resolve from this config file's directory. Download from https://github.com/windtf/wireproxy/releases (standard WireGuard) or https://github.com/bropines/awg-wireproxy/releases (AmneziaWG)."
+    },
+    "config": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Path to wireproxy .conf file (WireGuard/AmneziaWG config with [http] section). Relative paths resolve from this config file's directory."
+    },
+    "hosts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "description": "Domains to route through the WireGuard/AmneziaWG tunnel. Matching is case-insensitive. Subdomains are included automatically (e.g. 'openrouter.ai' matches 'api.openrouter.ai'). Empty array disables the plugin."
+    },
+    "port": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 65535,
+      "description": "Override the proxy port. Default: read from wireproxy.conf [http] BindAddress, falls back to 25345."
+    }
+  },
+  "additionalProperties": false
+}

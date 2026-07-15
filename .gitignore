@@ -1,0 +1,7 @@
+node_modules/
+dist/
+*.conf
+wireproxy/
+wireproxy.exe
+wireguard-proxy.jsonc
+.DS_Store
