@@ -16,8 +16,9 @@ OpenCode fetch (Bun)
 ```
 
 The plugin reads your config, spawns wireproxy as a child process (userspace, no
-root), patches `globalThis.fetch` to route matching hostnames through the HTTP
-proxy using Bun's native `proxy` option, and kills wireproxy when OpenCode exits.
+root), and patches `globalThis.fetch` to route matching hostnames through the HTTP
+proxy using Bun's native `proxy` option. The wireproxy process stays running after
+OpenCode exits so that other instances can reuse it.
 
 ## Setup
 

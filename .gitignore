@@ -5,3 +5,4 @@ wireproxy/
 wireproxy.exe
 wireguard-proxy.jsonc
 .DS_Store
+.omo

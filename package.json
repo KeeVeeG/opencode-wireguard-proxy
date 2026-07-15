@@ -1,6 +1,6 @@
 {
   "name": "@keeveeg/opencode-wireguard-proxy",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "OpenCode plugin: route specific hostnames through WireGuard/AmneziaWG via wireproxy (userspace HTTP proxy)",
   "type": "module",
   "main": "./dist/index.js",

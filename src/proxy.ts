@@ -146,12 +146,6 @@ export async function startProxy(
     proxyUrl,
     port,
     _reused: false,
-    dispose: async () => {
-      try {
-        proc.kill()
-      } catch {
-        // already exited
-      }
-    },
+    dispose: async () => {},
   }
 }
